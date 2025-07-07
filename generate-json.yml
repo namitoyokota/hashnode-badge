@@ -1,0 +1,27 @@
+name: Generate stats.json for Hashnode Badge
+
+on:
+  schedule:
+    - cron: "0 0 */1 * *"
+  workflow_dispatch:
+
+jobs:
+  generate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Bash
+        run: chmod +x script.sh
+
+      - name: Fetch Hashnode Stats
+        run: ./script.sh
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add stats.json
+          git commit -m "Updated Hashnode stats" || exit 0
+          git push
