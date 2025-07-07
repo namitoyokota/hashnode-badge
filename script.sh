@@ -62,7 +62,7 @@ fi
 cat <<EOF > stats.json
 {
   "schemaVersion": 1,
-  "label": "$YEAR Blogs Written",
+  "label": "Blogs written this year",
   "message": "$POST_COUNT",
   "color": "#2962FF"
 }
