@@ -59,7 +59,7 @@ if [ -z "$POST_COUNT" ]; then
   POST_COUNT=0
 fi
 
-cat <<EOF > stats.json
+cat <<EOF > badge.json
 {
   "schemaVersion": 1,
   "namedLogo": "Hashnode",
