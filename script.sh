@@ -62,6 +62,7 @@ fi
 cat <<EOF > stats.json
 {
   "schemaVersion": 1,
+  "namedLogo": "Hashnode",
   "label": "Blogs written this year",
   "message": "$POST_COUNT",
   "color": "#2962FF"
